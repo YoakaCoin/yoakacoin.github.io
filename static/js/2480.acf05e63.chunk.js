@@ -1,0 +1,1 @@
+(self.webpackChunkyoaka_coin_web=self.webpackChunkyoaka_coin_web||[]).push([[2480],{42480:function(){}}]);
