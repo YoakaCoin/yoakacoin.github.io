@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<style>
+  body {
+    font-family: sans-serif;
+  }
+
+  .redirect-loading {
+    font-size: 2em;
+    .dot {
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      opacity: 0;
+
+      &.one {
+        animation-name: dot-one;
+      }
+
+      &.two {
+        animation-name: dot-two;
+      }
+
+      &.three {
+        animation-name: dot-three;
+      }
+    }
+  }
+
+  @keyframes dot-one {
+    5% {
+      opacity: 0;
+    }
+
+    25% {
+      opacity: 1;
+    }
+
+    75% {
+      opacity: 1;
+    }
+
+    99% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes dot-two {
+    30% {
+      opacity: 0;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    75% {
+      opacity: 1;
+    }
+
+    99% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes dot-three {
+    55% {
+      opacity: 0;
+    }
+
+    75% {
+      opacity: 1;
+    }
+
+    99% {
+      opacity: 0;
+    }
+  }
+</style>
+
+<body>
+  <div class="redirect-loading">
+    Redirecting
+    <span class="dot one">.</span>
+    <span class="dot two">.</span>
+    <span class="dot three">.</span>
+  </div>
+</body>
+
+<script>
+  setTimeout(() => {
+    const url = location.search.split('?url=')[1];
+    if (url) {
+      location.href = url;
+    } else {
+      location.href = "/";
+    }
+  }, 3000)
+
+</script>
+
+</html>
